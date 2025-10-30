@@ -11,7 +11,6 @@ import { Dialog } from '@headlessui/react';
 export interface GitHubProject { id: number; name: string; html_url: string; description: string | null; language: string | null; stargazers_count: number; homepage: string | null; }
 export interface ProjectDetails { detailedDescription: string; techStack: string[]; }
 
-// ⚠️ ACTION REQUISE : Personnalisez cette section pour VOS projets !
 const projectDetailsMap: Record<string, ProjectDetails> = {
     'portofolio-alex-dembele': { detailedDescription: "Ce portfolio a été construit avec Next.js pour un rendu côté serveur rapide, TypeScript pour la robustesse du code, et Tailwind CSS pour un design moderne et responsive. L'interactivité est gérée par Framer Motion. Le défi était de créer une expérience utilisateur fluide et un design qui reflète des compétences techniques avancées.", techStack: ["nextjs", "react", "typescript", "tailwind", "framermotion"], },
     'k8s-multi-cloud-deployment': { detailedDescription: "Déploiement multi-cloud (AWS, GCP, Azure) d'une application sur Kubernetes. L'infrastructure est gérée via Terraform (Infrastructure as Code) pour une reproductibilité parfaite. Les manifestes Kubernetes sont gérés avec Helm et le déploiement continu est assuré par ArgoCD.", techStack: ["kubernetes", "docker", "aws", "azure", "google-cloud", "terraform", "helm", "argocd"]},
