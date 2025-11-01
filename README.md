@@ -1,21 +1,19 @@
-# Portfolio d'Alexandre Dembele
+# Alexandre Dembele's Portfolio
 
-Un portfolio professionnel moderne et interactif construit avec Next.js 14, TypeScript et Tailwind CSS. Ce projet est optimisé pour un déploiement gratuit sur Vercel.
+A modern and interactive professional portfolio built with Next.js 14, TypeScript, and Tailwind CSS. This project is optimized for free deployment on Vercel.
 
-## ✨ Fonctionnalités
+## ✨ Features
+- **Modern Design:** Animated sunrise background, glassmorphism effects, and micro-interactions.
+- **Tabbed Interface:** Clear and animated navigation between sections (Home, Experience, Projects, Certifications).
+- **Bento Grid Homepage:** Concise visual presentation of skills and profile.
+- **Experience Timeline:** Professional journey displayed chronologically and elegantly.
+- **Dynamic Projects:** Gallery of projects retrieved from the GitHub API, with custom images.
+- **Certification Grid:** Display of all certifications with the logos of the issuing organizations.
 
--   **Design Moderne :** Fond d'aurore animé, effets de "glassmorphism" et micro-interactions.
--   **Interface à Onglets :** Navigation claire et animée entre les sections (Accueil, Expérience, Projets, Certifications).
--   **Accueil en "Bento Grid" :** Présentation visuelle et concise des compétences et du profil.
--   **Timeline d'Expérience :** Parcours professionnel affiché de manière chronologique et élégante.
--   **Projets Dynamiques :** Galerie de projets récupérés depuis l'API GitHub, avec images personnalisées.
--   **Grille de Certifications :** Affichage de toutes les certifications avec les logos des organismes.
+## 🛠️ Technical Stack
 
-## 🛠️ Stack Technique
-
--   **Framework** : [Next.js](https://nextjs.org/) 14 (App Router)
--   **Langage** : [TypeScript](https://www.typescriptlang.org/)
--   **Styling** : [Tailwind CSS](https://tailwindcss.com/)
--   **Animations** : [Framer Motion](https://www.framer.com/motion/)
--   **Icônes** : [Lucide React](https://lucide.dev/)
-
+- **Framework**: [Next.js](https://nextjs.org/) 14 (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
