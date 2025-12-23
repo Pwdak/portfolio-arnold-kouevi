@@ -1,14 +1,13 @@
 "use client";
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { Badge } from "@/app/components/ui/Badge";
 import { Loader, AlertTriangle, ExternalLink, Github, ZoomIn } from "lucide-react";
 import { motion } from 'framer-motion';
 import { Modal } from '@/app/components/ui/Modal';
 import { Dialog } from '@headlessui/react';
 
 // --- INTERFACES POUR NOS DONNÉES ---
-export interface GitHubProject { id: number; name: string; html_url: string; description: string | null; language: string | null; stargazers_count: number; homepage: string | null; }
+export interface GitHubProject { id: number; name: string; html_url: string; description: string | null; language: string | null; stargazers_count: number; homepage: string | null; fork?: boolean; owner?: { login: string }; }
 export interface ProjectDetails { detailedDescription: string; techStack: string[]; }
 
 const projectDetailsMap: Record<string, ProjectDetails> = {
@@ -36,14 +35,14 @@ export default function ProjectsTab() {
                 const allRepos = await res.json();
 
                 // Get owned repos (excluding forks)
-                const ownedRepos = allRepos.filter((repo: any) => !repo.fork && repo.owner.login === USERNAME);
+                const ownedRepos = allRepos.filter((repo: GitHubProject) => !repo.fork && repo.owner?.login === USERNAME);
                 
                 // Get contributed repos from public events
                 const eventRes = await fetch(`https://api.github.com/users/${USERNAME}/events/public?per_page=300`);
-                const events = await eventRes.json();
+                const events = await eventRes.json() as Array<{ repo?: { name: string }; type: string }>;
                 
                 const contributedRepoNames = new Set<string>();
-                events.forEach((event: any) => {
+                events.forEach((event) => {
                     if (event.repo && event.type === 'PushEvent') {
                         const repoName = event.repo.name;
                         // Exclude owned repos
@@ -65,7 +64,7 @@ export default function ProjectsTab() {
                                 contributedRepos.push(repoData);
                             }
                         }
-                    } catch (err) {
+                    } catch {
                         // Silently skip on error
                     }
                 }
