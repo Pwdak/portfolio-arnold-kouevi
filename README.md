@@ -12,7 +12,7 @@ A modern and interactive professional portfolio built with Next.js 14, TypeScrip
 
 ## 🛠️ Technical Stack
 
-- **Framework**: [Next.js](https://nextjs.org/) 14 (App Router)
+- **Framework**: [Next.js](https://nextjs.org/) 16 (App Router)
 - **Language**: [TypeScript](https://www.typescriptlang.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 - **Animations**: [Framer Motion](https://www.framer.com/motion/)
