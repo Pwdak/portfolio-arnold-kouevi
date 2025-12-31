@@ -12,7 +12,7 @@ export interface ProjectDetails { detailedDescription: string; techStack: string
 
 const projectDetailsMap: Record<string, ProjectDetails> = {
     'portofolio-arnold-kouevi': { detailedDescription: "Ce portfolio a été construit avec Next.js pour un rendu côté serveur rapide, TypeScript pour la robustesse du code, et Tailwind CSS pour un design moderne et responsive. L'interactivité est gérée par Framer Motion. Le défi était de créer une expérience utilisateur fluide et un design qui reflète des compétences techniques avancées.", techStack: ["nextjs", "react", "typescript", "tailwind", "framermotion"], },
-    'k8s-multi-cloud-deployment': { detailedDescription: "Déploiement multi-cloud (AWS, GCP, Azure) d'une application sur Kubernetes, techStack: ["kubernetes", "docker", "aws", "azure", "google-cloud", "terraform", "helm", "argocd"]},
+    'k8s-multi-cloud-deployment': { detailedDescription: "Déploiement multi-cloud (AWS, GCP, Azure) d'une application sur Kubernetes.", techStack: ["kubernetes", "docker", "aws", "azure", "google-cloud", "terraform", "helm", "argocd"]},
     // Ajoutez vos autres projets ici...
 };
 
