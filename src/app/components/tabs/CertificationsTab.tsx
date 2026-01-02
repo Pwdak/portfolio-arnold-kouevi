@@ -4,15 +4,15 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Modal } from '@/app/components/ui/Modal';
 import { Dialog } from '@headlessui/react';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, Award } from 'lucide-react';
 
 const certifications = [
-    { name: 'AWS Certified Solutions Architect – Associate', issuer: 'AWS', logo: '/logos/aws.svg', url: 'https://aws.amazon.com/certification/certified-solutions-architect-associate/' },
-    { name: 'CompTIA Linux+ Certification', issuer: 'CompTIA', logo: '/logos/comptia.svg', url: 'https://www.comptia.org/certifications/linux' },
-    { name: 'Linux System Administration', issuer: 'OpenClassrooms', logo: '/logos/openclassrooms.png', url: '#' },
-    { name: 'Linux Server & Service Management', issuer: 'OpenClassrooms', logo: '/logos/openclassrooms.png', url: '#' },
-    { name: 'Ansible for Automation', issuer: 'OpenClassrooms', logo: '/logos/openclassrooms.png', url: '#' },
-    { name: 'Cloud with AWS', issuer: 'OpenClassrooms', logo: '/logos/openclassrooms.png', url: '#' },
+    { name: 'AWS Certified Solutions Architect – Associate', issuer: 'AWS', logo: '/logos/aws-certified-solutions-architect-associate.png', hasLogo: true, url: 'https://aws.amazon.com/certification/certified-solutions-architect-associate/' },
+    { name: 'CompTIA Linux+ Certification', issuer: 'CompTIA', logo: '/logos/comptia.svg', hasLogo: true, url: 'https://www.comptia.org/certifications/linux' },
+    { name: 'Linux System Administration', issuer: 'OpenClassrooms', logo: '', hasLogo: false, url: '#' },
+    { name: 'Linux Server & Service Management', issuer: 'OpenClassrooms', logo: '', hasLogo: false, url: '#' },
+    { name: 'Ansible for Automation', issuer: 'OpenClassrooms', logo: '', hasLogo: false, url: '#' },
+    { name: 'Cloud with AWS', issuer: 'OpenClassrooms', logo: '', hasLogo: false, url: '#' },
 ];
 
 type Certification = typeof certifications[0];
@@ -42,13 +42,17 @@ export default function CertificationsTab() {
                             transition={{ duration: 0.5, delay: index * 0.05 }}
                         >
                             <div className="relative flex justify-center items-center h-20 mb-4">
-                                <Image 
-                                    src={cert.logo} 
-                                    alt={`Logo de ${cert.issuer}`}
-                                    width={70} 
-                                    height={70} 
-                                    className="object-contain transition-transform duration-300 group-hover:scale-110"
-                                />
+                                {cert.hasLogo ? (
+                                    <Image 
+                                        src={cert.logo} 
+                                        alt={`Logo de ${cert.issuer}`}
+                                        width={70} 
+                                        height={70} 
+                                        className="object-contain transition-transform duration-300 group-hover:scale-110"
+                                    />
+                                ) : (
+                                    <Award className="w-16 h-16 text-accent opacity-70 group-hover:scale-110 transition-transform duration-300" />
+                                )}
                             </div>
                             <h3 className="font-semibold text-white text-sm leading-tight">{cert.name}</h3>
                             <p className="text-gray-400 text-xs mt-1">{cert.issuer}</p>
@@ -62,8 +66,12 @@ export default function CertificationsTab() {
                     <div className="flex flex-col items-center text-center space-y-4">
                         <Dialog.Title as="h3" className="text-2xl font-bold leading-6 text-accent pr-8">{selectedCert.name}</Dialog.Title>
                         
-                        <div className="relative w-32 h-32 mt-4">
-                           <Image src={selectedCert.logo} alt={`Logo de ${selectedCert.issuer}`} layout="fill" objectFit="contain"/>
+                        <div className="relative w-32 h-32 mt-4 flex items-center justify-center">
+                           {selectedCert.hasLogo ? (
+                               <Image src={selectedCert.logo} alt={`Logo de ${selectedCert.issuer}`} layout="fill" objectFit="contain"/>
+                           ) : (
+                               <Award className="w-24 h-24 text-accent" />
+                           )}
                         </div>
                         
                         <p className="text-lg text-primary">{selectedCert.issuer}</p>

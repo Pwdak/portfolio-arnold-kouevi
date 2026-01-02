@@ -8,7 +8,6 @@ const experiences = [
         role: "Linux System Administrator / DevOps",
         company: "ANID – TOGO",
         location: "Lomé, TOGO",
-        logo: "/logos/anid.png", 
         date: "Sept. 2023 – Present",
         tasks: [
             "Managed VMware environment (vCenter, ESXi, snapshots, migration)",
@@ -26,7 +25,6 @@ const experiences = [
         role: "Linux System Administrator",
         company: "ActioNet",
         location: "Virginia, USA",
-        logo: "/logos/actionet.png", 
         date: "Aug 2019 – Aug 2023",
         tasks: [
             "Administered Linux servers (RedHat, CentOS, Ubuntu) on VMware and AWS",
@@ -51,7 +49,7 @@ export default function ExperienceTab() {
                     <div key={index} className="flex gap-4 sm:gap-6">
                         <div className="relative flex flex-col items-center">
                             <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 bg-black/30 rounded-full border-2 border-border-color p-1">
-                                <Image src={exp.logo} alt={`Logo ${exp.company}`} width={40} height={40} className="rounded-full object-contain" onError={(e) => { e.currentTarget.src = '/logos/default.svg'; }} />
+                                <Briefcase className="w-6 h-6 text-accent" />
                             </div>
                             {index < experiences.length - 1 && (
                                 <div className="flex-grow w-px bg-border-color mt-4"></div>

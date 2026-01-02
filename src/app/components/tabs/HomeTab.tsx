@@ -14,22 +14,44 @@ const skillCategories = [
     { 
         icon: Cloud, 
         title: "Cloud & Infrastructure", 
-        skills: ["aws", "kubernetes", "docker", "azure", "google-cloud"] 
+        skills: [
+            { name: "AWS", logo: "aws", hasLogo: true },
+            { name: "VMware", logo: "vmware", hasLogo: false },
+            { name: "OpenShift", logo: "openshift", hasLogo: false },
+            { name: "OpenStack", logo: "openstack", hasLogo: true } // Available in logos folder
+        ] 
     },
     { 
         icon: Zap, 
         title: "DevOps & Automation", 
-        skills: ["terraform", "helm", "argocd", "github actions", "bash"] 
+        skills: [
+            { name: "Docker", logo: "docker", hasLogo: true },
+            { name: "Kubernetes", logo: "kubernetes", hasLogo: true },
+            { name: "Ansible", logo: "ansible", hasLogo: false },
+            { name: "Jenkins", logo: "jenkins", hasLogo: false },
+            { name: "Terraform", logo: "terraform", hasLogo: true },
+            { name: "GitLab CI", logo: "gitlab", hasLogo: false },
+            { name: "Bash", logo: "bash", hasLogo: true }
+        ] 
     },
     { 
         icon: Lock, 
         title: "Security & Network", 
-        skills: ["vpn", "iam", "ssl"] 
+        skills: [
+            { name: "SSL/TLS", logo: "ssl", hasLogo: false },
+            { name: "Firewall", logo: "firewall", hasLogo: false },
+            { name: "VPN", logo: "vpn", hasLogo: true }
+        ] 
     },
     {
         icon: Monitor,
         title: "Monitoring & Optimization",
-        skills: ["prometheus", "grafana"]
+        skills: [
+            { name: "Prometheus", logo: "prometheus", hasLogo: true },
+            { name: "Grafana", logo: "grafana", hasLogo: true },
+            { name: "Zabbix", logo: "zabbix", hasLogo: false },
+            { name: "ELK Stack", logo: "elk", hasLogo: false }
+        ]
     }
 ];
 
@@ -71,14 +93,19 @@ export default function HomeTab() {
                         </div>
                         <div className="flex flex-wrap gap-4 items-center">
                            {category.skills.map(skill => (
-                               <div key={skill} className="flex items-center justify-center p-2 bg-gray-700/30 rounded-full" title={skill.charAt(0).toUpperCase() + skill.slice(1)}>
-                                   <Image 
-                                     src={`/logos/${skill}.svg`} 
-                                     alt={`Logo ${skill}`} 
-                                     width={"37"} 
-                                     height={37}
-                                     className="object-contain"
-                                   />
+                               <div key={skill.name} className={`flex items-center justify-center px-4 py-2 rounded-full border border-white/10 ${skill.hasLogo ? 'bg-gray-700/30' : 'bg-accent/10'}`} title={skill.name}>
+                                   {skill.hasLogo ? (
+                                       <Image 
+                                         src={`/logos/${skill.logo}.svg`} 
+                                         alt={`Logo ${skill.name}`} 
+                                         width={24} 
+                                         height={24}
+                                         className="object-contain"
+                                       />
+                                   ) : (
+                                       <span className="text-sm font-medium text-secondary">{skill.name}</span>
+                                   )}
+                                   {skill.hasLogo && <span className="ml-2 text-sm font-medium text-secondary">{skill.name}</span>}
                                </div>
                            ))}
                         </div>

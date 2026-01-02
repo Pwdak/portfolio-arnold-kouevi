@@ -96,7 +96,7 @@ export default function ProjectsTab() {
                         <motion.div key={project.id} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: index * 0.1 }}>
                             <div className="group h-full flex flex-col bg-card-bg p-4 rounded-xl border border-border-color transition-all duration-300 hover:border-accent/50 hover:scale-105">
                                 <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden cursor-pointer" onClick={() => handleProjectClick(project)}>
-                                    <Image src={`/projects/${project.name}.png`} alt={`Aperçu de ${project.name}`} layout="fill" objectFit="cover" onError={(e) => { e.currentTarget.src = '/projects/default-project.png'; }} />
+                                    <Image src={`/projects/${project.name}.png`} alt={`Aperçu de ${project.name}`} layout="fill" objectFit="cover" onError={(e) => { e.currentTarget.src = '/projects/default.png'; }} />
                                     <div className="absolute inset-0 bg-black/60 group-hover:bg-black/20 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100"><ZoomIn className="text-white h-10 w-10" /></div>
                                 </div>
                                 <div className="flex flex-col flex-grow">
