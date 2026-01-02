@@ -10,7 +10,7 @@ module.exports = {
   theme: {
     extend: {
         fontFamily: {
-            sans: ['"Space Grotesk"', ...fontFamily.sans],
+            sans: ['Helvetica', 'Arial', 'sans-serif', ...fontFamily.sans],
         },
         // ↓↓↓ Ajoutez ce bloc de couleurs ↓↓↓
         colors: {

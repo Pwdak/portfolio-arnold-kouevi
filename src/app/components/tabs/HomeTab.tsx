@@ -17,7 +17,6 @@ const skillCategories = [
         skills: [
             { name: "AWS", logo: "aws", hasLogo: true },
             { name: "VMware", logo: "vmware", hasLogo: false },
-            { name: "OpenShift", logo: "openshift", hasLogo: false },
             { name: "OpenStack", logo: "openstack", hasLogo: true } // Available in logos folder
         ] 
     },
@@ -27,6 +26,7 @@ const skillCategories = [
         skills: [
             { name: "Docker", logo: "docker", hasLogo: true },
             { name: "Kubernetes", logo: "kubernetes", hasLogo: true },
+            { name: "OpenShift", logo: "openshift", hasLogo: false },
             { name: "Ansible", logo: "ansible", hasLogo: false },
             { name: "Jenkins", logo: "jenkins", hasLogo: false },
             { name: "Terraform", logo: "terraform", hasLogo: true },
@@ -63,7 +63,7 @@ export default function HomeTab() {
             <div className="lg:col-span-2 space-y-6 flex flex-col items-center lg:items-start text-center lg:text-left">
                 <h2 className="text-3xl font-bold text-accent">About Me</h2>
                 <p className="text-secondary leading-relaxed">
-                    Passionate and certified Linux System Administrator with over 6 years of experience in DevOps engineering. I specialize in managing on-premise and cloud (AWS) infrastructures, virtualization (VMware), containerization (Docker, Kubernetes), automation (Ansible, Jenkins), and monitoring. I handle the entire lifecycle of Linux environments, from deployment to maintenance, with a strong focus on DevOps practices and security.
+                    Passionate and certified Linux System Administrator with over 7 years of experience in DevOps engineering. I specialize in managing on-premise and cloud (AWS) infrastructures, virtualization (VMware), containerization (Docker, Kubernetes), automation (Ansible, Jenkins), and monitoring. I handle the entire lifecycle of Linux environments, from deployment to maintenance, with a strong focus on DevOps practices and security.
                 </p>
 
                 <div className="flex flex-wrap gap-4 justify-center lg:justify-start">

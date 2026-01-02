@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr" suppressHydrationWarning>
-      <body className={spaceGrotesk.className}>
+      <body className="font-sans">
         <CursorTrail />
         <div className="aurora-background"></div>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
