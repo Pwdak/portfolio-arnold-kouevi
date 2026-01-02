@@ -17,7 +17,6 @@ const skillCategories = [
         skills: [
             { name: "AWS", logo: "aws", hasLogo: true },
             { name: "VMware", logo: "vmware", hasLogo: false },
-            { name: "OpenStack", logo: "openstack", hasLogo: true } // Available in logos folder
         ] 
     },
     { 
